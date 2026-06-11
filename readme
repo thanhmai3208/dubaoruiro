@@ -1,0 +1,19 @@
+# 🛡️ Ứng dụng Phát hiện Giao dịch Gian lận & Rủi ro tín dụng (Streamlit Web App)
+
+Ứng dụng web được chuyển đổi tự động từ tài liệu quy trình huấn luyện Machine Learning mô hình phân loại để nhận diện sớm các giao dịch bất thường hoặc khách hàng có dấu hiệu nợ xấu dựa trên tập dữ liệu đầu vào.
+
+## 🗂️ Mô tả ứng dụng & Thuật toán sử dụng
+- **Thuật toán chính:** Rừng ngẫu nhiên (`RandomForestClassifier`) kế thừa nguyên bản cấu trúc pipeline từ file thiết kế notebook gốc.
+- **Quy trình xử lý dữ liệu:**
+  1. Nạp và kiểm định cấu trúc tập biến.
+  2. Điền khuyết thiếu tự động bằng giá trị trung vị (`median`) của tập dữ liệu mẫu.
+  3. Chuẩn hóa thang đo đặc trưng bằng công cụ `StandardScaler`.
+  4. Phân chia dữ liệu kiểm định theo tỷ lệ thích ứng cấu hình từ phía người dùng.
+- **Biến mục tiêu:** `default` (Nhận giá trị phân loại 0: Bình thường, 1: Rủi ro/Gian lận).
+- **Tập biến tính năng đầu vào (X):** Gồm 14 biến số liên tục định danh từ `X_1` đến `X_14`.
+
+## ⚙️ Cài đặt hệ thống
+Yêu cầu hệ thống đã cài đặt Python phiên bản từ 3.9 trở lên. Để cài đặt trọn gói các thư viện phụ thuộc, thực hiện lệnh dưới đây tại terminal:
+
+```bash
+pip install -r requirements.txt
